@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security Vulnerability
+    url: https://github.com/Serkanby/s3.7_Weather-Proxy-API/security/policy
+    about: Please report security vulnerabilities through our security policy
+  - name: Questions & Discussions
+    url: https://github.com/Serkanby/s3.7_Weather-Proxy-API/discussions
+    about: Ask questions and discuss ideas in GitHub Discussions
