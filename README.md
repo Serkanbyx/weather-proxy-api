@@ -213,7 +213,8 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 
 ## Developer
 
-- **Serkan Bayraktar**
+**Serkanby**
+
 - Website: [serkanbayraktar.com](https://serkanbayraktar.com/)
 - GitHub: [@Serkanbyx](https://github.com/Serkanbyx)
 - Email: [serkanbyx1@gmail.com](mailto:serkanbyx1@gmail.com)
@@ -226,7 +227,7 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 
 ## Contact
 
-- Issues: [Create an issue](https://github.com/Serkanbyx/weather-proxy-api/issues)
+- [Open an Issue](https://github.com/Serkanbyx/weather-proxy-api/issues)
 - Email: [serkanbyx1@gmail.com](mailto:serkanbyx1@gmail.com)
 - Website: [serkanbayraktar.com](https://serkanbayraktar.com/)
 

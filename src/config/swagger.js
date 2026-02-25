@@ -9,7 +9,8 @@ const options = {
       description:
         "A secure proxy API for OpenWeather that provides caching, rate limiting, and response filtering. API keys are hidden from the client.",
       contact: {
-        name: "API Support",
+        name: "Serkanby",
+        url: "https://serkanbayraktar.com/",
       },
     },
     servers: [
