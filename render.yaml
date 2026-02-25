@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: weather-proxy-api
+    runtime: node
+    buildCommand: npm install
+    startCommand: node src/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: OPENWEATHER_API_KEY
+        sync: false
+      - key: CACHE_TTL
+        value: 600
+      - key: RATE_LIMIT_WINDOW_MS
+        value: 900000
+      - key: RATE_LIMIT_MAX
+        value: 100
