@@ -83,23 +83,29 @@ Before suggesting, please check if:
 Make sure you have the following installed:
 
 - Git
+- Node.js (LTS recommended) and npm
 - A code editor (VS Code recommended)
-- Required runtime/dependencies for the project
 
 ### Local Installation
 
 ```bash
 # Clone your fork
-git clone https://github.com/YOUR_USERNAME/REPOSITORY_NAME.git
+git clone https://github.com/YOUR_USERNAME/weather-proxy-api.git
 
 # Navigate to project directory
-cd REPOSITORY_NAME
+cd weather-proxy-api
 
-# Install dependencies (if applicable)
-# npm install / pip install -r requirements.txt / etc.
+# Install dependencies
+npm install
 
-# Start development server (if applicable)
-# npm start / python app.py / etc.
+# Create your environment file
+cp .env.example .env
+
+# Start the development server
+npm run dev
+
+# Run the test suite
+npm test
 ```
 
 ## Style Guidelines
@@ -121,8 +127,8 @@ We follow semantic commit messages:
 **Examples:**
 
 ```
-feat: add user authentication
-fix: resolve login redirect issue
+feat: add air quality endpoint
+fix: validate negative longitude values
 docs: update installation instructions
 style: format code with prettier
 refactor: simplify validation logic
@@ -137,9 +143,9 @@ refactor: simplify validation logic
 
 ### Code Style
 
-- Use consistent indentation (2 or 4 spaces)
-- Use meaningful variable and function names
-- Write comments for complex logic
+- Use consistent indentation (2 spaces)
+- Use meaningful variable and function names (camelCase)
+- Write comments for complex logic only
 - Keep functions small and focused
 - Follow DRY (Don't Repeat Yourself) principle
 - Remove unused code and imports
@@ -150,11 +156,11 @@ Use descriptive branch names with prefixes:
 
 | Prefix      | Use Case         | Example                   |
 | ----------- | ---------------- | ------------------------- |
-| `feature/`  | New features     | `feature/user-auth`       |
-| `fix/`      | Bug fixes        | `fix/login-error`         |
+| `feature/`  | New features     | `feature/air-quality`     |
+| `fix/`      | Bug fixes        | `fix/coord-validation`    |
 | `hotfix/`   | Urgent fixes     | `hotfix/security-patch`   |
 | `docs/`     | Documentation    | `docs/api-guide`          |
-| `refactor/` | Code refactoring | `refactor/database-layer` |
+| `refactor/` | Code refactoring | `refactor/cache-layer`    |
 
 ## Questions?
 

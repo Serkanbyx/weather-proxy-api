@@ -16,7 +16,7 @@ body:
     attributes:
       label: Bug Summary
       description: A brief summary of the bug
-      placeholder: e.g., BMI calculation returns incorrect value
+      placeholder: e.g., Weather endpoint returns 500 for valid city
     validations:
       required: true
 

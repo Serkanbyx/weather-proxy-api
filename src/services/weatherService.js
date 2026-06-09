@@ -78,6 +78,13 @@ const filterForecast = (raw) => ({
   })),
 });
 
+/**
+ * Normalizes a coordinate for cache keys so that values pointing to virtually
+ * the same location (e.g. 41.0 and 41.00) reuse the same cache entry.
+ * 4 decimals keeps ~11m precision, which is far finer than weather granularity.
+ */
+const normalizeCoord = (value) => Number.parseFloat(value).toFixed(4);
+
 const fetchFromApi = async (endpoint, params, cacheKey, filterFn) => {
   const cached = cache.get(cacheKey);
   if (cached) {
@@ -124,7 +131,7 @@ const getCurrentByCoords = (lat, lon) =>
   fetchFromApi(
     "/weather",
     { lat, lon },
-    `current:coords:${lat}:${lon}`,
+    `current:coords:${normalizeCoord(lat)}:${normalizeCoord(lon)}`,
     filterCurrentWeather
   );
 
@@ -140,7 +147,7 @@ const getForecastByCoords = (lat, lon) =>
   fetchFromApi(
     "/forecast",
     { lat, lon },
-    `forecast:coords:${lat}:${lon}`,
+    `forecast:coords:${normalizeCoord(lat)}:${normalizeCoord(lon)}`,
     filterForecast
   );
 

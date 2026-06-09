@@ -22,7 +22,7 @@ Weather Proxy API is a secure and production-ready backend service that fetches 
 Also try:
 
 - API docs: [Swagger UI](https://weather-proxy-api-yrc5.onrender.com/api-docs)
-- Health endpoint: [Service status](https://weather-proxy-api-yrc5.onrender.com/)
+- Health endpoint: [Service status](https://weather-proxy-api-yrc5.onrender.com/health)
 
 ## Technologies
 
@@ -74,6 +74,16 @@ npm run dev
 npm start
 ```
 
+Run the test suite:
+
+```bash
+# Run all tests once
+npm test
+
+# Re-run tests on file changes
+npm run test:watch
+```
+
 #### VS Code Workflow (Alternative)
 
 ```bash
@@ -103,6 +113,8 @@ curl "http://localhost:3000/api/weather/current?city=Istanbul"
 
 ## How It Works?
 
+> For a full, step-by-step build playbook (from scaffolding to deployment), see [docs/build-guide.md](./docs/build-guide.md).
+
 ### Request Flow
 
 1. The client sends a request to `/api/weather/*`.
@@ -129,6 +141,7 @@ GET    /api/weather/forecast?city={city}
 GET    /api/weather/forecast/coords?lat={lat}&lon={lon}
 GET    /api/cache/stats
 DELETE /api/cache/flush
+GET    /health
 GET    /
 ```
 
@@ -170,16 +183,20 @@ Add stricter constraints in `src/middlewares/validateQuery.js` to enforce custom
 - ✅ Rate limiting on API routes
 - ✅ Swagger documentation with OpenAPI schema generation
 - ✅ Centralized error handling and middleware-based architecture
+- ✅ JSON health check endpoint for uptime probes
+- ✅ Unit and integration test suite (Jest + Supertest)
 
 ### Future Features
 
 - [ ] Redis-based distributed cache for multi-instance deployments
 - [ ] Request logging and tracing with correlation IDs
 - [ ] API key authentication for consumer applications
-- [ ] Unit and integration test suites with CI quality gates
+- [ ] CI quality gates wired to the existing test suite
 - [ ] Multi-provider weather fallback strategy
 
 ## Contributing
+
+Contributions are welcome! Please read our [Contributing Guide](./.github/CONTRIBUTING.md) and [Code of Conduct](./.github/CODE_OF_CONDUCT.md) before getting started. To report a vulnerability, see our [Security Policy](./.github/SECURITY.md).
 
 1. Fork the repository.
 2. Create a feature branch:
